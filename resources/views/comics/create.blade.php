@@ -41,6 +41,9 @@
                   <div>
                         <button type="submit" class="btn btn-warning">SALVA</button>
                   </div>
+                  <a href="{{ route("comics.index",) }}" class="btn btn-primary">
+                    torna indietro
+                </a>
                   
             </form>
         </div>

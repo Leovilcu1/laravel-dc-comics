@@ -9,7 +9,7 @@
         {{-- Includiamo gli assets con la direttiva @vite --}}
         @vite('resources/js/app.js')
     </head>
-    <body>
+    <body class="text-center">
         <header>
             <h1>HEADER</h1>
         <main>

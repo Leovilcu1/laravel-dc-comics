@@ -97,8 +97,18 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
 
         $comic = Comic::findOrFail($id);
+        $request->validate([
+            "title" => "required|max:255",
+            "price" => "required|numeric|min:1",
+            "series" => "required|max:100",
+            "type" => [
+                "required",
+                Rule::in(['comic book',"graphic novel"])
+            ]
+        ]);
         $data =$request->all();
         $comic->update($data);
 

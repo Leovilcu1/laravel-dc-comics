@@ -13,6 +13,7 @@
             <div class="col">
                 <div class="card text-center">
                     <div class="card-body">
+                        <img src="{{ $comic->thumb }}" class="card-img-top" alt="...">
                         <p>{{ $comic->description }}</p>
                         </a>
                     </div>

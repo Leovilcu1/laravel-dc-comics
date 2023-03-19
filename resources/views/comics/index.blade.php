@@ -15,6 +15,7 @@
             <div class="col-4">
                 <div class="card text-center h-100">
                     <div class="card-body">
+                        <img src="{{ $comic->thumb }}" class="card-img-top" alt="...">
                         <h2 class="card-title">{{ $comic->title }}</h2>
                         <a href="{{ route('comics.show',$comic->id) }}" class="btn btn-primary">
                             vedi dettagli
@@ -22,32 +23,15 @@
                         <a href="{{ route("comics.edit",$comic->id) }}" class="btn btn-warning">
                                 Aggiorna
                         </a>
-                        <form action="{{ route("comics.destroy",$comic->id) }}" method="POST">
+                        <form onsubmit="return confirm('vuoi eliminare questo articolo?');" action="{{ route("comics.destroy",$comic->id) }}" method="POST">
                             @csrf
                             @method("DELETE")
 
-                            <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button  type="submit" class="btn btn-danger">
                                     Elimina
                                 </button>
                                 
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">sei sicuro</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                        ...
-                                        </div>
-                                        <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Elimina</button>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
+                               
 
                         </form>
                     </div>
